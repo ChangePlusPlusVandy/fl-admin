@@ -2,19 +2,52 @@ import React, { useState, useEffect } from "react";
 import { getAuth, signOut } from "firebase/auth";
 import { IUser } from "../../types/database";
 import User from "../../components/User";
+import { generateHmacSignature } from "../../utils/hmac";
 
 interface IDashboardProps {}
 
 const Dashboard: React.FunctionComponent<IDashboardProps> = () => {
   const [users, setUsers] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredUsers, setFilteredUsers] = useState<IUser[]>(users);
+
+  const handleSearch = (searchTerm: string) => {
+    const lowerCaseSearchTerm = searchTerm.toLowerCase();
+
+    const filtered = (users || []).filter((user: IUser) => {
+      return (
+        searchTerm === "" ||
+        (user?.name && user.name.toLowerCase().includes(lowerCaseSearchTerm)) ||
+        (user?.emailAddress &&
+          user.emailAddress.toLowerCase().includes(lowerCaseSearchTerm))
+      );
+    });
+
+    setFilteredUsers(filtered);
+  };
+
+  const handleChange = (e: any) => {
+    const inputValue = e.target.value;
+    setSearchInput(inputValue);
+    handleSearch(inputValue);
+  };
 
   const auth = getAuth();
 
   const getUsers = async () => {
-    const usersCall = await fetch(`${process.env.REACT_APP_API_URL}/user`);
+    const signature = generateHmacSignature(
+      "GET",
+      process.env.REACT_APP_API_KEY || ""
+    );
+    const usersCall = await fetch(`${process.env.REACT_APP_API_URL}/user`, {
+      headers: {
+        "Friends-Life-Signature": signature,
+      },
+    });
     const users = await usersCall.json();
     const usersFiltered = users.filter((user: IUser) => user.type === "admin");
     setUsers(usersFiltered);
+    setFilteredUsers(usersFiltered);
   };
 
   useEffect(() => {
@@ -25,12 +58,20 @@ const Dashboard: React.FunctionComponent<IDashboardProps> = () => {
     <div>
       <h1>Dashboard</h1>
       <div>Family Users</div>
+      <div>
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchInput}
+          onChange={handleChange}
+        />
+      </div>
 
       <div>
-        {users.map((user: IUser) => {
+        {filteredUsers.map((user: IUser) => {
           return (
             <User
-              _id={user._id}
+              key={user.key}
               firebaseUserId={user.firebaseUserId}
               name={user.name}
               emailAddress={user.emailAddress}

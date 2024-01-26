@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IUser, IFriend } from "../types/database";
 import Friend from "./Friend";
+import { generateHmacSignature } from "../utils/hmac";
 
 const User: React.FunctionComponent<IUser> = (props) => {
   const [friends, setFriends] = useState<IFriend[]>([]);
@@ -8,7 +9,15 @@ const User: React.FunctionComponent<IUser> = (props) => {
 
   const getFriends = async (user: IUser) => {
     const uCall = await fetch(
-      `${process.env.REACT_APP_API_URL}/user/${user._id}}`
+      `${process.env.REACT_APP_API_URL}/user/firebase/${user.firebaseUserId}`,
+      {
+        headers: {
+          "Friends-Life-Signature": generateHmacSignature(
+            JSON.stringify({ firebaseId: user.firebaseUserId }),
+            process.env.REACT_APP_API_KEY || ""
+          ),
+        },
+      }
     );
     const u = await uCall.json();
     const friendIds = u.friends;
@@ -17,7 +26,15 @@ const User: React.FunctionComponent<IUser> = (props) => {
 
     friendIds?.forEach(async (friendId: string) => {
       const friendCall = await fetch(
-        `${process.env.REACT_APP_API_URL}/friend/${friendId}}`
+        `${process.env.REACT_APP_API_URL}/friend/${friendId}}`,
+        {
+          headers: {
+            "Friends-Life-Signature": generateHmacSignature(
+              "GET",
+              process.env.REACT_APP_API_KEY || ""
+            ),
+          },
+        }
       );
       const friend: IFriend = await friendCall.json();
       setFriends([...friendsArr, friend]);
@@ -25,7 +42,7 @@ const User: React.FunctionComponent<IUser> = (props) => {
   };
 
   const handleClick = () => {
-    setPopupVisible(true);
+    setPopupVisible(!isPopupVisible);
   };
 
   const handleClose = () => {
@@ -49,9 +66,8 @@ const User: React.FunctionComponent<IUser> = (props) => {
           {friends.map((friend: IFriend) => (
             <Friend name={friend.friendName} />
           ))}
-          <h3>Add Friend:</h3>
-          <input />
-          <br />
+          <h3>Add Friend</h3>
+
           <button onClick={handleClose}>Close</button>
         </div>
       )}
