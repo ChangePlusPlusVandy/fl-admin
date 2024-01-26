@@ -17,8 +17,10 @@ const LoginPage: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [loginMessage, setLoginMessage] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const signInWithGoogle = async () => {
+    setLoading(true);
     signInWithPopup(auth, new GoogleAuthProvider())
       .then(async (user) => {
         const signature = generateHmacSignature(
@@ -46,9 +48,11 @@ const LoginPage: React.FC = () => {
       .catch((error) => {
         console.log(error);
       });
+    setLoading(false);
   };
 
   const signInWithEmailPassword = async () => {
+    setLoading(true);
     try {
       console.log("sd");
       const userCredential = await signInWithEmailAndPassword(
@@ -83,6 +87,7 @@ const LoginPage: React.FC = () => {
       setLoginMessage(error.message);
       console.error(error.message);
     }
+    setLoading(false);
   };
 
   return (
@@ -116,7 +121,9 @@ const LoginPage: React.FC = () => {
           </label>
 
           {loginMessage !== "" && <div>{loginMessage}</div>}
-          <button type="submit">Sign In</button>
+          <button type="submit" disabled={loading}>
+            Sign In
+          </button>
         </form>
       </div>
     </div>
