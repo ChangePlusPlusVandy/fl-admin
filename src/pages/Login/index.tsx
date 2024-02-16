@@ -92,12 +92,18 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className="login-page-container">
-      <h1>Login Page</h1>
-
-      <button onClick={signInWithGoogle}>Sign In With Google</button>
+      <div>
+        <img src="../fl-logo.png" />
+      </div>
 
       <div className="email-password-section">
-        <h2>Admin Sign In</h2>
+        <h3>Welcome To</h3>
+        <h1>
+          <b>Friends Life</b>
+        </h1>
+
+        <button onClick={signInWithGoogle}>Sign In With Google</button>
+
         <form
           onSubmit={(e) => {
             e.preventDefault();

@@ -3,6 +3,7 @@ import { getAuth, signOut } from "firebase/auth";
 import { IUser } from "../../types/database";
 import User from "../../components/User";
 import { generateHmacSignature } from "../../utils/hmac";
+import NavBar from "../../components/NavBar";
 
 interface IDashboardProps {}
 
@@ -56,6 +57,7 @@ const Dashboard: React.FunctionComponent<IDashboardProps> = () => {
 
   return (
     <div>
+      <NavBar />
       <h1>Dashboard</h1>
       <div>Family Users</div>
       <div>
