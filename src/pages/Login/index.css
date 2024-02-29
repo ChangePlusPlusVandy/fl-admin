@@ -1,35 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 body {
-  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .login-page-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: row; /* align items horizontally */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  position: relative; /* for absolute positioning of the right image */
+  font-family: 'Poppins', sans-serif;
 }
 
-button {
-  margin-top: 10px;
-  padding: 10px;
-  font-family: "Poppins", sans-serif;
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-right: auto; /* push the content to the left */
+  padding-left: 10%;
+  z-index: 2; /* make sure it's above the right image */
+}
+
+.login-logo img {
+  width: 100px; /* Adjust the size of your logo */
+  margin-bottom: 32px;
 }
 
 .email-password-section {
-  margin-top: 20px;
-}
-
-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 360px; /* Adjust width as necessary */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: white;
+  border: 1px solid #E0E0E0;
 }
 
-label {
-  margin: 10px 0;
+.email-password-section h3,
+.email-password-section h1 {
+  text-align: left;
+  margin: 0;
 }
 
-input {
-  padding: 8px;
-  margin: 5px;
+.email-password-section h3 {
+  color: #757575;
+  font-size: 16px;
+}
+
+.email-password-section h1 {
+  color: #212121;
+  font-size: 24px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.email-password-section button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #FFA500;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.email-password-section form {
+  width: 100%;
+}
+
+.email-password-section label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.email-password-section input[type="email"],
+.email-password-section input[type="password"] {
+  width: 92.5%;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #BDBDBD;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.login-message {
+  text-align: center;
+  color: #E53935;
+  margin-bottom: 16px;
+}
+
+.right-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.right-image img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .login-content {
+    align-items: center;
+  }
+
+  .email-password-section {
+    margin-bottom: 20px; /* space from bottom */
+  }
+}
+
+@media (min-width: 1024px) {
+  .login-content {
+    margin-left: 5%; /* add some space from the left edge */
+  }
 }

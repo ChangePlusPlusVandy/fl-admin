@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { IUser } from "../../types/database";
 import { generateHmacSignature } from "../../utils/hmac";
 import "./index.css";
+import logoImage from "../../assets/fl-logo.png"; // Adjust the path to where your image is located
+import rightImage from "../../assets/login-right.png";
 
 const LoginPage: React.FC = () => {
   const auth = getAuth();
@@ -91,49 +93,50 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="login-page-container">
-      <div>
-        <img src="../fl-logo.png" />
+      <div className="login-page-container">
+        <div className="login-content">
+          <div className="login-logo">
+            <img src={logoImage} alt="Friends Life logo" />
+          </div>
+    
+          <div className="email-password-section">
+            <h3>Welcome to</h3>
+            <h1><b>Friends Life</b></h1>
+            <button onClick={signInWithGoogle}>Sign In With Google</button>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                signInWithEmailPassword();
+              }}
+            >
+              <label>
+                Email:
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </label>
+              <label>
+                Password:
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </label>
+    
+              {loginMessage !== "" && (
+                <div className="login-message">{loginMessage}</div>
+              )}
+              <button type="submit" disabled={loading}>Log in</button>
+            </form>
+          </div>
+        </div>
+        <div className="right-image">
+          <img src={rightImage} alt="" />
+        </div>
       </div>
-
-      <div className="email-password-section">
-        <h3>Welcome To</h3>
-        <h1>
-          <b>Friends Life</b>
-        </h1>
-
-        <button onClick={signInWithGoogle}>Sign In With Google</button>
-
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            signInWithEmailPassword();
-          }}>
-          <label>
-            Email:
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </label>
-          <label>
-            Password:
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </label>
-
-          {loginMessage !== "" && <div>{loginMessage}</div>}
-          <button type="submit" disabled={loading}>
-            Sign In
-          </button>
-        </form>
-      </div>
-    </div>
-  );
+  )
 };
 
 export default LoginPage;
