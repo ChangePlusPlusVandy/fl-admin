@@ -27,19 +27,17 @@ body {
 }
 
 .login-logo img {
-  width: 100px; /* Adjust the size of your logo */
-  margin-bottom: 32px;
+  justify-content: center;
+  margin-top: 5%;
+  width: 100%; /* Adjust the size of your logo */
 }
 
 .email-password-section {
   display: flex;
   flex-direction: column;
-  width: 360px; /* Adjust width as necessary */
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30vw; /* Adjust width as necessary */
   border-radius: 8px;
   background: white;
-  border: 1px solid #E0E0E0;
 }
 
 .email-password-section h3,
