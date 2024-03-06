@@ -6,6 +6,7 @@ import AuthRoute from "./components/AuthRoute";
 // import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import ManageFriend from "./pages/ManageFriend";
+import FriendPage from "./pages/FriendPage";
 
 initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -25,6 +26,13 @@ const App = () => {
           element={
             <AuthRoute>
               <ManageFriend />
+            </AuthRoute>
+          }></Route>
+          <Route
+          path="/friend"
+          element={
+            <AuthRoute>
+              <FriendPage />
             </AuthRoute>
           }></Route>
         <Route path="/login" element={<Login />} />

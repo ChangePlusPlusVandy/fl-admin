@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { getAuth } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { IFriend } from "../../types/database";
 import { generateHmacSignature } from "../../utils/hmac";
 import Friend from "../../components/Friend";
 import "./index.css";
 
 const ManageFriend: React.FC = () => {
-  const auth = getAuth();
-  const navigate = useNavigate();
   const [friends, setFriends] = useState<IFriend[]>([]); // Replace IUser with your user type
 
   const fetchData = async () => {
@@ -29,7 +25,8 @@ const ManageFriend: React.FC = () => {
       }
 
       const friends = await response.json();
-      setFriends(friends);
+      console.log(friends)
+       setFriends(friends);
     } catch (error) {
       console.error("Failed to fetch users:", error);
     }
@@ -48,7 +45,7 @@ const ManageFriend: React.FC = () => {
       <div className="friends-list">
         <p> Select a friend: </p>
         {friends.map((friend) => (
-          <Friend id={friend.key} name={friend.friendName} pfp={friend.profilePicture} />
+          <Friend id={friend._id} name={friend.friendName} pfp={friend.profilePicture} />
         ))}
       </div>
     </div>
