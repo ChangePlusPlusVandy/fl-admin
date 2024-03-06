@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { IFriend } from "../../types/database";
+import { IUser } from "../../types/database";
 import { generateHmacSignature } from "../../utils/hmac";
 import Friend from "../../components/Friend";
 import "./index.css";
 
-const ManageFriend: React.FC = () => {
+const AddFamily: React.FC = () => {
   const auth = getAuth();
   const navigate = useNavigate();
-  const [friends, setFriends] = useState<IFriend[]>([]); // Replace IUser with your user type
+  const [family, setFamily] = useState<IUser[]>([]); // Replace IUser with your user type
 
   const fetchData = async () => {
     const signature = generateHmacSignature(
@@ -18,7 +18,7 @@ const ManageFriend: React.FC = () => {
     );
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/friend`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/user`, {
         headers: {
           "Friends-Life-Signature": signature,
         },
@@ -28,8 +28,9 @@ const ManageFriend: React.FC = () => {
         throw new Error("Network response was not ok");
       }
 
-      const friends = await response.json();
-      setFriends(friends);
+      const users = await response.json();
+      const familyUsers = users.filter(((user: IUser) => user.type === "Family"));
+      setFamily(familyUsers);
     } catch (error) {
       console.error("Failed to fetch users:", error);
     }
@@ -38,22 +39,25 @@ const ManageFriend: React.FC = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  
 
   return (
-    <div className="manage-friends-container">
-      <h1>Manage Friends</h1>
-      <span className="friends-container-description">
-        <p>View your friends and add/delete as you see fit</p>
+    <div className="add-family-container">
+      <h1>Add Family</h1>
+      <span className="family-container-description">
+        <p>Select one of the options below</p>
       </span>
       <div className="friends-list">
         <p> Select a friend: </p>
-        {friends.map((friend) => (
-          <Friend id={friend.key} name={friend.friendName} pfp={friend.profilePicture} />
+        {family.map((family) => (
+          <Friend
+            id={family.key}
+            name={family.name}
+            pfp={family.profilePicture}
+          />
         ))}
       </div>
     </div>
   );
 };
 
-export default ManageFriend;
+export default AddFamily;
