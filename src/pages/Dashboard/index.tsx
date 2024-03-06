@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getAuth, signOut } from "firebase/auth";
 import { IUser } from "../../types/database";
-import User from "../../components/User";
+// import User from "../../components/User";
 import { generateHmacSignature } from "../../utils/hmac";
 import NavBar from "../../components/NavBar";
 
@@ -70,7 +70,7 @@ const Dashboard: React.FunctionComponent<IDashboardProps> = () => {
       </div>
 
       <div>
-        {filteredUsers.map((user: IUser) => {
+        {/* {filteredUsers.map((user: IUser) => {
           return (
             <User
               key={user.key}
@@ -86,7 +86,7 @@ const Dashboard: React.FunctionComponent<IDashboardProps> = () => {
               schedule={user.schedule}
             />
           );
-        })}
+        })} */}
       </div>
       <div></div>
 

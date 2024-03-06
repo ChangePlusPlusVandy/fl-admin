@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+.manage-friends-container {
+  font-family: "Poppins", sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.manage-friends-container h1 {
+  color: #333;
+  text-align: center;
+}
+
+.friends-list {
+  margin-top: 20px;
+}
