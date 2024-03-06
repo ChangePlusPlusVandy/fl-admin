@@ -3,7 +3,7 @@ import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { IUser } from "../../types/database";
 import { generateHmacSignature } from "../../utils/hmac";
-import Friend from "../../components/Friend";
+import Family from "../../components/Family";
 import "./index.css";
 
 const AddFamily: React.FC = () => {
@@ -29,7 +29,7 @@ const AddFamily: React.FC = () => {
       }
 
       const users = await response.json();
-      const familyUsers = users.filter(((user: IUser) => user.type === "Family"));
+      const familyUsers = users.filter((user: IUser) => user.type === "Family");
       setFamily(familyUsers);
     } catch (error) {
       console.error("Failed to fetch users:", error);
@@ -46,10 +46,10 @@ const AddFamily: React.FC = () => {
       <span className="family-container-description">
         <p>Select one of the options below</p>
       </span>
-      <div className="friends-list">
-        <p> Select a friend: </p>
+      <div className="family-list">
+        <p> Select a family: </p>
         {family.map((family) => (
-          <Friend
+          <Family
             id={family.key}
             name={family.name}
             pfp={family.profilePicture}

@@ -25,7 +25,7 @@ const App = () => {
           path="/"
           element={
             <AuthRoute>
-              <ManageFriend />
+              <AddFamily />
             </AuthRoute>
           }
         ></Route>
