@@ -3,8 +3,9 @@ import { initializeApp } from "firebase/app";
 import AuthRoute from "./components/AuthRoute";
 
 // pages
-import Dashboard from "./pages/Dashboard";
+// import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import ManageFriend from "./pages/ManageFriend";
 
 initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -23,7 +24,7 @@ const App = () => {
           path="/"
           element={
             <AuthRoute>
-              <Dashboard />
+              <ManageFriend />
             </AuthRoute>
           }></Route>
         <Route path="/login" element={<Login />} />
