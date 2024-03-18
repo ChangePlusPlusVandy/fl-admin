@@ -1,19 +1,109 @@
-.selection-button {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+.fl-icon {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.button-box {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+.selected-friends-button {
   width: 100%;
   border: none;
   background-color: white;
   height: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: black;
+  background-image: url("../../assets/selected-manage-friends.png");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
 }
 
-.selection-button:hover {
-  background-color: gray;
+.selected-register-button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: black;
+  background-image: url("../../assets/selected-register.png");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
 }
+
+.unselected-friends-button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: gray;
+  background-image: url("../../assets/unselected-manage-friends.png");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
+}
+.unselected-friends-button:hover {
+  color: black;
+}
+
+.unselected-register-button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: gray;
+  background-image: url("../../assets/unselected-register.png");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
+}
+.unselected-register-button:hover {
+  color: black;
+}
+
+.logout-button {
+  margin-left: 5px;
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: gray;
+  background-image: url("../../assets/logout.png");
+  background-size: 33px 33px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 45px;
+}
+.logout-button:hover {
+  color: black;
+}
+
 .navbar {
+  font-family: "Poppins", sans-serif;
   width: 200px;
   background-color: white;
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
+  padding-top: 60px;
   border-right: black 1.5px solid;
   margin-top: 20px;
   margin-bottom: 20px;

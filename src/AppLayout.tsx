@@ -6,6 +6,7 @@ import AuthRoute from "./components/AuthRoute";
 import Dashboard from "./pages/Dashboard";
 import "./layout.css";
 import NavBar from "./components/NavBar";
+import ManageFriend from "./pages/ManageFriend";
 
 const AppLayout = () => {
   return (
@@ -17,6 +18,30 @@ const AppLayout = () => {
           element={
             <AuthRoute>
               <Dashboard />
+            </AuthRoute>
+          }
+        ></Route>
+        <Route
+          path="/manage-friends"
+          element={
+            <AuthRoute>
+              <ManageFriend />
+            </AuthRoute>
+          }
+        ></Route>
+        <Route
+          path="/manage-users"
+          element={
+            <AuthRoute>
+              <ManageFriend />
+            </AuthRoute>
+          }
+        ></Route>
+        <Route
+          path="/manage-staff"
+          element={
+            <AuthRoute>
+              <ManageFriend />
             </AuthRoute>
           }
         ></Route>
