@@ -3,8 +3,9 @@ import { initializeApp } from "firebase/app";
 import AuthRoute from "./components/AuthRoute";
 
 // pages
-import Dashboard from "./pages/Dashboard";
+// import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import ManageFriend from "./pages/ManageFriend";
 import AppLayout from "./AppLayout";
 import "./layout.css";
 initializeApp({
