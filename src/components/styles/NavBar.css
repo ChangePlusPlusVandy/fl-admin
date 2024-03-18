@@ -1,0 +1,21 @@
+.selection-button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 40px;
+}
+
+.selection-button:hover {
+  background-color: gray;
+}
+.navbar {
+  width: 200px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  border-right: black 1.5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+}

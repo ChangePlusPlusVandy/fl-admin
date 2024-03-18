@@ -5,7 +5,8 @@ import AuthRoute from "./components/AuthRoute";
 // pages
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
-
+import AppLayout from "./AppLayout";
+import "./layout.css";
 initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -19,14 +20,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <AuthRoute>
-              <Dashboard />
-            </AuthRoute>
-          }></Route>
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<AppLayout />} />
       </Routes>
     </BrowserRouter>
   );
