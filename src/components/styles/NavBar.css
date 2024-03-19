@@ -2,7 +2,10 @@
 
 .fl-icon {
   font-weight: bold;
-  font-size: x-large;
+  font-size: 28px;
+}
+.fl-icon:hover {
+  cursor: pointer;
 }
 
 .button-box {
@@ -26,6 +29,9 @@
   background-position: left center;
   padding-left: 50px;
 }
+.selected-friends-button:hover {
+  cursor: pointer;
+}
 
 .selected-register-button {
   width: 100%;
@@ -41,7 +47,9 @@
   background-position: left center;
   padding-left: 50px;
 }
-
+.selected-register-button {
+  cursor: pointer;
+}
 .unselected-friends-button {
   width: 100%;
   border: none;
@@ -58,6 +66,7 @@
 }
 .unselected-friends-button:hover {
   color: black;
+  cursor: pointer;
 }
 
 .unselected-register-button {
@@ -76,6 +85,7 @@
 }
 .unselected-register-button:hover {
   color: black;
+  cursor: pointer;
 }
 
 .logout-button {
@@ -95,11 +105,12 @@
 }
 .logout-button:hover {
   color: black;
+  cursor: pointer;
 }
 
 .navbar {
   font-family: "Poppins", sans-serif;
-  width: 200px;
+  width: 220px;
   background-color: white;
   display: flex;
   flex-direction: column;

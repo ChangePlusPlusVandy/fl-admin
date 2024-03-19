@@ -8,7 +8,7 @@ import "./styles/NavBar.css";
 const NavBar = () => {
   const auth = getAuth();
   const navigate = useNavigate();
-  const [currentPage, setCurrentPage] = useState("dashboard");
+  const [currentPage, setCurrentPage] = useState("manage-friends");
 
   const navigateTo = (page: SetStateAction<string>) => {
     setCurrentPage(page);
