@@ -6,6 +6,8 @@ import AuthRoute from "./components/AuthRoute";
 // import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import ManageFriend from "./pages/ManageFriend";
+import FriendPage from "./pages/FriendPage";
+
 import AppLayout from "./AppLayout";
 import "./layout.css";
 initializeApp({
@@ -27,6 +29,14 @@ const App = () => {
             <AuthRoute>
               <AddFamily />
             </AuthRoute>
+          }></Route>
+          <Route
+          path="/friend"
+          element={
+            <AuthRoute>
+              <FriendPage />
+            </AuthRoute>
+          }></Route>
           }
         ></Route>
         <Route path="/login" element={<Login />} />

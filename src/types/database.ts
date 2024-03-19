@@ -1,5 +1,5 @@
 export interface IUser {
-  key: string;
+  _id: string;
   firebaseUserId: string;
   name: string;
   emailAddress: string;
@@ -14,7 +14,7 @@ export interface IUser {
 }
 
 export interface IPost {
-  key: string;
+  _id: string;
   userId: string; // Assuming user ID is used to reference the user who created the post
   user: string;
   title: string;
@@ -25,7 +25,7 @@ export interface IPost {
 }
 
 export interface IMessage {
-  key: string;
+  _id: string;
   messageBody: string;
   timestamps: Date;
   sender: string; // Assuming sender and recipient are referenced by user IDs
@@ -34,7 +34,7 @@ export interface IMessage {
 }
 
 export interface IFriend {
-  key: string;
+  _id: string;
   friendName: string;
   profilePicture: string;
   reports: string[]; // Assuming reports are referenced by their IDs
@@ -50,7 +50,7 @@ export interface IChat {
 }
 
 export interface IAttendance {
-  key: string;
+  _id: string;
   date: Date;
   friendId: string; // Assuming friend ID is used to reference the friend
   timeIns: Date[];
@@ -60,7 +60,7 @@ export interface IAttendance {
 }
 
 export interface IReport {
-  key: string;
+  _id: string;
   friendId: string; // Assuming friend ID is used to reference the friend
   reportBody: string;
   date: Date;

@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import { useNavigate } from "react-router-dom";
 
 interface IFriendProps {
   id: string;
@@ -8,14 +9,16 @@ interface IFriendProps {
 }
 
 const Friend: React.FC<IFriendProps> = (props) => {
+  const navigate = useNavigate();
+
   const { id, name, pfp } = props;
 
-  const selectFriend = (friendId: string) => {
-    console.log(`Friend selected: ${friendId}`);
+  const selectFriend = (friendId: string, name: string) => {
+    navigate('/friend', { state: { friendId: friendId, name: name } });
   };
 
   return (
-    <div className="friend-item" onClick={() => selectFriend(id)}>
+    <div className="friend-item" onClick={() => selectFriend(id, name)}>
       <div className="friend-info">
         <img src={pfp} alt={`Profile of ${name}`} className="friend-pfp" />
         <div className="friend-name">{name}</div>
