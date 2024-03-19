@@ -25,21 +25,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <AuthRoute>
-              <AddFamily />
-            </AuthRoute>
-          }></Route>
-        <Route
-          path="/friend"
-          element={
-            <AuthRoute>
-              <FriendPage />
-            </AuthRoute>
-          }></Route>
-
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<AppLayout />} />
       </Routes>
