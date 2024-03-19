@@ -37,6 +37,17 @@ const NavBar = () => {
 
         <button
           className={
+            isCurrentPage("manage-users")
+              ? "selected-user-button"
+              : "unselected-user-button"
+          }
+          onClick={() => navigateTo("manage-users")}
+        >
+          Manage Users
+        </button>
+
+        <button
+          className={
             isCurrentPage("register")
               ? "selected-register-button"
               : "unselected-register-button"

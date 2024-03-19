@@ -50,7 +50,7 @@ const AddFamily: React.FC = () => {
         <p> Select a family: </p>
         {family.map((family) => (
           <Family
-            id={family.key}
+            id={family._id}
             name={family.name}
             pfp={family.profilePicture}
           />
