@@ -7,6 +7,8 @@ import Dashboard from "./pages/Dashboard";
 import "./layout.css";
 import NavBar from "./components/NavBar";
 import ManageFriend from "./pages/ManageFriend";
+import AddFamily from "./pages/AddFamily";
+import FriendPage from "./pages/FriendPage";
 
 const AppLayout = () => {
   return (
@@ -30,10 +32,17 @@ const AppLayout = () => {
           }
         ></Route>
         <Route
+          path="/friend"
+          element={
+            <AuthRoute>
+              <FriendPage />
+            </AuthRoute>
+          }></Route>
+        <Route
           path="/manage-users"
           element={
             <AuthRoute>
-              <ManageFriend />
+              <AddFamily />
             </AuthRoute>
           }
         ></Route>
