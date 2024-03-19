@@ -8,6 +8,8 @@ import Login from "./pages/Login";
 import ManageFriend from "./pages/ManageFriend";
 import FriendPage from "./pages/FriendPage";
 
+import AppLayout from "./AppLayout";
+import "./layout.css";
 initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -25,7 +27,7 @@ const App = () => {
           path="/"
           element={
             <AuthRoute>
-              <ManageFriend />
+              <AddFamily />
             </AuthRoute>
           }></Route>
           <Route
@@ -35,7 +37,10 @@ const App = () => {
               <FriendPage />
             </AuthRoute>
           }></Route>
+          }
+        ></Route>
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<AppLayout />} />
       </Routes>
     </BrowserRouter>
   );

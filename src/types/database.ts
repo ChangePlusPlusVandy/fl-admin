@@ -10,6 +10,7 @@ export interface IUser {
   friends: string[]; // Assuming friends are referenced by their IDs
   chats: string[]; // Assuming chats are referenced by their IDs
   schedule: string[];
+  profilePicture: string;
 }
 
 export interface IPost {
@@ -38,11 +39,13 @@ export interface IFriend {
   profilePicture: string;
   reports: string[]; // Assuming reports are referenced by their IDs
   attendance: string[]; // Assuming attendance records are referenced by their IDs
+  schedule: number[];
 }
 
 export interface IChat {
-  _id: string;
-  users: string[]; // Assuming users are referenced by their IDs
+  key: string;
+  user1: string; // Assuming users are referenced by their IDs
+  user2: string;
   messages: string[]; // Assuming messages are referenced by their IDs
 }
 
@@ -52,6 +55,8 @@ export interface IAttendance {
   friendId: string; // Assuming friend ID is used to reference the friend
   timeIns: Date[];
   timeOuts: Date[];
+  transportation: boolean;
+  socialClub: boolean;
 }
 
 export interface IReport {

@@ -57,7 +57,6 @@ const Dashboard: React.FunctionComponent<IDashboardProps> = () => {
 
   return (
     <div>
-      <NavBar />
       <h1>Dashboard</h1>
       <div>Family Users</div>
       <div>
