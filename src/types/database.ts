@@ -10,6 +10,7 @@ export interface IUser {
   friends: string[]; // Assuming friends are referenced by their IDs
   chats: string[]; // Assuming chats are referenced by their IDs
   schedule: string[];
+  profilePicture: string;
 }
 
 export interface IPost {

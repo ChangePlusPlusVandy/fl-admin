@@ -43,8 +43,9 @@ const ManageFriend: React.FC = () => {
   return (
     <div className="manage-friends-container">
       <h1>Manage Friends</h1>
-      <p>View your friends and add/delete as you see fit</p>
-
+      <span className="friends-container-description">
+        <p>View your friends and add/delete as you see fit</p>
+      </span>
       <div className="friends-list">
         <p> Select a friend: </p>
         {friends.map((friend) => (
