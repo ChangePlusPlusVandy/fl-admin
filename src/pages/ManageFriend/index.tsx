@@ -26,7 +26,7 @@ const ManageFriend: React.FC = () => {
 
       const friends = await response.json();
       console.log(friends)
-       setFriends(friends);
+      setFriends(friends);
     } catch (error) {
       console.error("Failed to fetch users:", error);
     }
