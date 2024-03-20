@@ -26,6 +26,17 @@ const NavBar = () => {
       <div className="button-box">
         <button
           className={
+            isCurrentPage("manage-family")
+              ? "selected-friends-button"
+              : "unselected-friends-button"
+          }
+          onClick={() => navigateTo("manage-family")}
+        >
+          Manage Family
+        </button>
+
+        <button
+          className={
             isCurrentPage("manage-friends")
               ? "selected-friends-button"
               : "unselected-friends-button"
@@ -54,7 +65,18 @@ const NavBar = () => {
           }
           onClick={() => navigateTo("register")}
         >
-          Register New
+          Register Friend
+        </button>
+
+        <button
+          className={
+            isCurrentPage("approve-user")
+              ? "selected-register-button"
+              : "unselected-register-button"
+          }
+          onClick={() => navigateTo("approve-user")}
+        >
+          Approve User
         </button>
 
         <button className="logout-button" onClick={() => signOut(auth)}>
