@@ -1,6 +1,6 @@
 import React from "react";
-import "./index.css";
 import { useNavigate } from "react-router-dom";
+import "./index.css";
 
 interface IFriendProps {
   id: string;
@@ -14,7 +14,7 @@ const Friend: React.FC<IFriendProps> = (props) => {
   const { id, name, pfp } = props;
 
   const selectFriend = (friendId: string, name: string) => {
-    navigate('/friend', { state: { friendId: friendId, name: name } });
+    navigate("/friend", { state: { friendId: friendId, name: name } });
   };
 
   return (

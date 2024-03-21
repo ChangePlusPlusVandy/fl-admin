@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import { initializeApp } from "firebase/app";
+import { Routes, Route, Outlet } from "react-router-dom";
 import AuthRoute from "./components/AuthRoute";
 
 // pages
@@ -10,6 +9,7 @@ import ManageFriend from "./pages/ManageFriend";
 import AddFamily from "./pages/AddFamily";
 import FriendPage from "./pages/FriendPage";
 import RegisterNew from "./pages/RegisterNew";
+import FamilyPage from "./pages/FamilyPage";
 
 const AppLayout = () => {
   return (
@@ -54,10 +54,10 @@ const AppLayout = () => {
             </AuthRoute>
           }></Route>
         <Route
-          path="/manage-staff"
+          path="/user"
           element={
             <AuthRoute>
-              <ManageFriend />
+              <FamilyPage />
             </AuthRoute>
           }></Route>
         <Route path="*" element={<Outlet />} />

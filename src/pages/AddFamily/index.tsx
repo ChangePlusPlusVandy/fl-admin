@@ -7,8 +7,6 @@ import Family from "../../components/Family";
 import "./index.css";
 
 const AddFamily: React.FC = () => {
-  const auth = getAuth();
-  const navigate = useNavigate();
   const [family, setFamily] = useState<IUser[]>([]); // Replace IUser with your user type
 
   const fetchData = async () => {
@@ -42,9 +40,9 @@ const AddFamily: React.FC = () => {
 
   return (
     <div className="add-family-container">
-      <h1>Add Family</h1>
+      <h1>Manage Family User</h1>
       <span className="family-container-description">
-        <p>Select one of the options below</p>
+        <p>Select one of the users below</p>
       </span>
       <div className="family-list">
         <p> Select a family: </p>
