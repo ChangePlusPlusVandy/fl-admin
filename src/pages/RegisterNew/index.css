@@ -1,0 +1,139 @@
+.register-new-container {
+  font-family: "Poppins", sans-serif;
+  width: 80vw;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  position: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-new-container h1 {
+  color: #333;
+  text-align: center;
+}
+
+.register-new-description {
+  color: #333;
+  text-align: center;
+}
+
+.register-new-button {
+  align-items: center;
+  padding: 10px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 25vw;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.register-new-button:hover {
+  background-color: #ececec;
+}
+
+.register-new-friend button {
+  align-items: center;
+  padding: 10px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 10vw;
+  height: 5vh;
+  margin: 0;
+  font-weight: bold;
+}
+
+.register-new-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.register-new-friend-name {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.register-new-friend-name input {
+  width: 30%;
+  padding: 10px;
+  border-width: 0;
+  border-radius: 4px;
+  margin: 0;
+  margin-left: 10px;
+  background-color: #f7f7f7;
+}
+
+.register-new-friend-pfp {
+  position: flex;
+  text-align: left;
+}
+
+.register-new-friend-pfp p {
+  width: auto;
+  margin-right: 30px;
+  display: inline-block;
+}
+
+.register-new-friend-schedule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: #f7f7f7;
+  border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.register-new-friend-schedule label {
+  padding: 10px;
+}
+
+.reg-admin {
+  align-items: center;
+  border-width: 0;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.reg-admin button {
+  align-items: center;
+  padding: 10px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 10vw;
+  height: 5vh;
+  margin-top: 10px;
+  font-weight: bold;
+}
