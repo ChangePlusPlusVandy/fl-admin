@@ -40,6 +40,7 @@ export interface IFriend {
   reports: string[]; // Assuming reports are referenced by their IDs
   attendance: string[]; // Assuming attendance records are referenced by their IDs
   schedule: number[];
+  families: string[]; // Assuming families are referenced by their IDs
 }
 
 export interface IChat {
