@@ -18,6 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .friends-list {
@@ -27,4 +28,74 @@
 
 .custom-hr {
   margin-top: 20px;
+}
+
+.search-bar {
+  width: 30%;
+  padding: 10px;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  background-color: #f7f7f7;
+}
+
+.reg-new-friend {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  border-width: 0;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.reg-new-friend-name input {
+  width: 50%;
+  padding: 10px;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+}
+
+.reg-new-friend-schedule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: #f7f7f7;
+  border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.reg-new-friend-schedule label {
+  margin: 10px;
+}
+
+.reg-new-friend button {
+  align-items: center;
+  padding: 10px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 10vw;
+  height: 5vh;
+  margin: 0;
+  font-weight: bold;
+}
+
+.reg-new-friend button:hover {
+  background-color: #ececec;
+}
+
+.reg-new-friend-pfp p {
+  width: 20%;
 }
