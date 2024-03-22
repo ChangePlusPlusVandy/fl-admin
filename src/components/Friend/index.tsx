@@ -14,7 +14,9 @@ const Friend: React.FC<IFriendProps> = (props) => {
   const { id, name, pfp } = props;
 
   const selectFriend = (friendId: string, name: string, pfp: string) => {
-    navigate('/friend', { state: { friendId: friendId, name: name, pfp: pfp } });
+    navigate("/friend", {
+      state: { friendId: friendId, name: name, pfp: pfp },
+    });
   };
 
   return (
