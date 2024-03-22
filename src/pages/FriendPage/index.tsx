@@ -173,6 +173,31 @@ const FriendPage: React.FC = () => {
     }
   };
 
+  const handleDelete = async () => {
+    const conf = window.confirm(
+      `Are you sure you want to delete ${updateName}?`
+    );
+    try {
+      if (conf) {
+        //deleting friend doc
+        // await fetch(`${process.env.REACT_APP_API_URL}/friend/${friendId}`, {
+        //   method: "DELETE",
+        //   headers: {
+        //     "Friends-Life-Signature": generateHmacSignature(
+        //       JSON.stringify({ friendId }),
+        //       process.env.REACT_APP_API_KEY || ""
+        //     ),
+        //   },
+        // });
+
+        window.location.href = "/manage-friends";
+        alert("Friend deleted successfully");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     setFriendData({
       friendName: name,
@@ -248,6 +273,15 @@ const FriendPage: React.FC = () => {
               }}>
               Save
             </button>
+            {/* <br></br>
+            <button
+              style={{ color: "red" }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleDelete();
+              }}>
+              Delete Friend
+            </button> */}
           </form>
         </div>
       </div>
