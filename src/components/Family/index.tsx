@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./index.css";
 
 interface IFamilyProps {
@@ -8,10 +9,11 @@ interface IFamilyProps {
 }
 
 const Family: React.FC<IFamilyProps> = (props) => {
+  const navigate = useNavigate();
   const { id, name, pfp } = props;
 
   const selectFamily = (familyId: string) => {
-    console.log(`Family selected: ${familyId}`);
+    navigate("/user", { state: { userId: id, name: name } });
   };
 
   return (

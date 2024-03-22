@@ -1,0 +1,8 @@
+.dashboard-container {
+  font-family: "Poppins", sans-serif;
+  width: 50vw;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+}
