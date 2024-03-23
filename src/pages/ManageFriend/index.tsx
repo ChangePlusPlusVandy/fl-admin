@@ -25,7 +25,7 @@ const ManageFriend: React.FC = () => {
       }
 
       const friends = await response.json();
-      console.log(friends)
+      console.log(friends);
       setFriends(friends);
     } catch (error) {
       console.error("Failed to fetch users:", error);
@@ -35,7 +35,6 @@ const ManageFriend: React.FC = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  
 
   return (
     <div className="manage-friends-container">
@@ -43,10 +42,14 @@ const ManageFriend: React.FC = () => {
       <span className="friends-container-description">
         <p>View your friends and add/delete as you see fit</p>
       </span>
-      <div className="friends-list">
+      <div className="friend-list">
         <p> Select a friend: </p>
         {friends.map((friend) => (
-          <Friend id={friend._id} name={friend.friendName} pfp={friend.profilePicture} />
+          <Friend
+            id={friend._id}
+            name={friend.friendName}
+            pfp={friend.profilePicture}
+          />
         ))}
       </div>
     </div>
