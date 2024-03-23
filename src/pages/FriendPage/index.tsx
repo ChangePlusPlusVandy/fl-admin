@@ -173,30 +173,30 @@ const FriendPage: React.FC = () => {
     }
   };
 
-  const handleDelete = async () => {
-    const conf = window.confirm(
-      `Are you sure you want to delete ${updateName}?`
-    );
-    try {
-      if (conf) {
-        //deleting friend doc
-        // await fetch(`${process.env.REACT_APP_API_URL}/friend/${friendId}`, {
-        //   method: "DELETE",
-        //   headers: {
-        //     "Friends-Life-Signature": generateHmacSignature(
-        //       JSON.stringify({ friendId }),
-        //       process.env.REACT_APP_API_KEY || ""
-        //     ),
-        //   },
-        // });
-
-        window.location.href = "/manage-friends";
-        alert("Friend deleted successfully");
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const handleDelete = async () => {
+  //   const conf = window.confirm(
+  //     `Are you sure you want to delete ${updateName}?`
+  //   );
+  //   try {
+  //     if (conf) {
+  // //deleting friend doc
+  // await fetch(`${process.env.REACT_APP_API_URL}/friend/${friendId}`, {
+  //   method: "DELETE",
+  //   headers: {
+  //     "Friends-Life-Signature": generateHmacSignature(
+  //       JSON.stringify({ friendId }),
+  //       process.env.REACT_APP_API_KEY || ""
+  //     ),
+  //   },
+  // });
+  //
+  //       window.location.href = "/manage-friends";
+  //       alert("Friend deleted successfully");
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   useEffect(() => {
     setFriendData({
@@ -219,7 +219,7 @@ const FriendPage: React.FC = () => {
           <h3>Edit Information</h3>
           <form>
             <div className="reg-new-friend-name">
-              <p>Name:</p>
+              <span>Name:</span>
               <input
                 type="text"
                 placeholder="Full Name"
@@ -236,7 +236,7 @@ const FriendPage: React.FC = () => {
             </div>
 
             <div className="reg-new-friend-pfp">
-              <p>Profile Picture:</p>
+              <span>Profile Picture:</span>
               <ImageUpload onImageUpload={handleFriendImageUpload} />
             </div>
             <div>

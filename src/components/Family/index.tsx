@@ -13,7 +13,7 @@ const Family: React.FC<IFamilyProps> = (props) => {
   const { id, name, pfp } = props;
 
   const selectFamily = (familyId: string) => {
-    navigate("/user", { state: { userId: id, name: name } });
+    navigate("/user", { state: { userId: familyId, name: name, pfp: pfp } });
   };
 
   return (

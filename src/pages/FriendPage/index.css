@@ -23,7 +23,7 @@
 
 .friends-list {
   width: 80%;
-  margin-top: 20px;
+  margin: 0;
 }
 
 .custom-hr {
@@ -48,7 +48,15 @@
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 90%;
+  width: 80%;
+}
+
+.reg-new-friend h3 {
+  margin: 0 0 15px 0;
+}
+
+.reg-new-friend span {
+  margin: 0 15px 0 0;
 }
 
 .reg-new-friend-name input {

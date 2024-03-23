@@ -3,6 +3,7 @@ export interface IUser {
   firebaseUserId: string;
   name: string;
   emailAddress: string;
+  phoneNumber: string;
   forgotPasswordCode: string;
   type: string;
   posts: string[]; // Assuming posts are referenced by their IDs
