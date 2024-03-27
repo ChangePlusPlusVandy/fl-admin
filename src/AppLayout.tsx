@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import { initializeApp } from "firebase/app";
+import { Routes, Route, Outlet } from "react-router-dom";
 import AuthRoute from "./components/AuthRoute";
 
 // pages
@@ -7,11 +6,18 @@ import Dashboard from "./pages/Dashboard";
 import "./layout.css";
 import NavBar from "./components/NavBar";
 import ManageFriend from "./pages/ManageFriend";
+import AddFamily from "./pages/AddFamily";
+import FriendPage from "./pages/FriendPage";
+import RegisterNew from "./pages/RegisterNew";
+import FamilyPage from "./pages/FamilyPage";
+import ApproveUser from "./pages/ApproveUser"
 
 const AppLayout = () => {
   return (
     <div className="app-layout">
-      <NavBar />
+      <AuthRoute>
+        <NavBar />
+      </AuthRoute>
       <Routes>
         <Route
           path="/"
@@ -19,32 +25,49 @@ const AppLayout = () => {
             <AuthRoute>
               <Dashboard />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/manage-friends"
           element={
             <AuthRoute>
               <ManageFriend />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
+        <Route
+          path="/register"
+          element={
+            <AuthRoute>
+              <RegisterNew />
+            </AuthRoute>
+          }></Route>
+        <Route
+          path="/friend"
+          element={
+            <AuthRoute>
+              <FriendPage />
+            </AuthRoute>
+          }></Route>
         <Route
           path="/manage-users"
           element={
             <AuthRoute>
-              <ManageFriend />
+              <AddFamily />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
         <Route
-          path="/manage-staff"
+          path="/user"
           element={
             <AuthRoute>
-              <ManageFriend />
+              <FamilyPage />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
+          <Route
+          path="/approve-user"
+          element={
+            <AuthRoute>
+              <ApproveUser />
+            </AuthRoute>
+          }></Route>
         <Route path="*" element={<Outlet />} />
       </Routes>
     </div>

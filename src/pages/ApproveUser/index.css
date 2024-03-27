@@ -1,0 +1,57 @@
+.register-new-container {
+  font-family: "Poppins", sans-serif;
+  width: 80vw;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  position: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-container {
+  display: flex;
+}
+
+.split-left {
+  width: 50%;
+  margin-right: 2px;
+}
+
+.split-right {
+  width: 50%;
+  margin-left: 2px;
+}
+
+.approve-schedule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: #f7f7f7;
+  border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.approve-search-bar {
+  width: 50%;
+  padding: 10px;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  background-color: #f7f7f7;
+}
+
+.search-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.approve-schedule label {
+  margin: 0 20px 0 20px;
+}

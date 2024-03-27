@@ -1,15 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { initializeApp } from "firebase/app";
-import AuthRoute from "./components/AuthRoute";
 
 // pages
 // import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
-import ManageFriend from "./pages/ManageFriend";
-import FriendPage from "./pages/FriendPage";
 
 import AppLayout from "./AppLayout";
 import "./layout.css";
+
 initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,

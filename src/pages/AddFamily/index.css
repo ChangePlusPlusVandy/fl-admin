@@ -2,7 +2,7 @@
 
 .add-family-container {
   font-family: "Poppins", sans-serif;
-  max-width: 600px;
+  width: 50vw;
   margin: 0 auto;
   padding: 20px;
   background: #fff;
