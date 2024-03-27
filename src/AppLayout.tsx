@@ -10,7 +10,7 @@ import AddFamily from "./pages/AddFamily";
 import FriendPage from "./pages/FriendPage";
 import RegisterNew from "./pages/RegisterNew";
 import FamilyPage from "./pages/FamilyPage";
-import ApproveUser from "./pages/ApproveUser"
+import ApproveUser from "./pages/ApproveUser";
 
 const AppLayout = () => {
   return (
@@ -25,49 +25,56 @@ const AppLayout = () => {
             <AuthRoute>
               <Dashboard />
             </AuthRoute>
-          }></Route>
+          }
+        ></Route>
         <Route
           path="/manage-friends"
           element={
             <AuthRoute>
               <ManageFriend />
             </AuthRoute>
-          }></Route>
+          }
+        ></Route>
         <Route
           path="/register"
           element={
             <AuthRoute>
               <RegisterNew />
             </AuthRoute>
-          }></Route>
+          }
+        ></Route>
         <Route
           path="/friend"
           element={
             <AuthRoute>
               <FriendPage />
             </AuthRoute>
-          }></Route>
+          }
+        ></Route>
         <Route
-          path="/manage-users"
+          path="/manage-family"
           element={
             <AuthRoute>
               <AddFamily />
             </AuthRoute>
-          }></Route>
+          }
+        ></Route>
         <Route
           path="/user"
           element={
             <AuthRoute>
               <FamilyPage />
             </AuthRoute>
-          }></Route>
-          <Route
+          }
+        ></Route>
+        <Route
           path="/approve-user"
           element={
             <AuthRoute>
               <ApproveUser />
             </AuthRoute>
-          }></Route>
+          }
+        ></Route>
         <Route path="*" element={<Outlet />} />
       </Routes>
     </div>
