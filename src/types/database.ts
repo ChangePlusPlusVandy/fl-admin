@@ -12,6 +12,7 @@ export interface IUser {
   chats: string[]; // Assuming chats are referenced by their IDs
   schedule: string[];
   profilePicture: string;
+  approved: boolean;
 }
 
 export interface IPost {
