@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { initializeApp } from "firebase/app";
+import { Analytics } from "@vercel/analytics/react";
 
 // pages
 // import Dashboard from "./pages/Dashboard";
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Analytics />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<AppLayout />} />
       </Routes>

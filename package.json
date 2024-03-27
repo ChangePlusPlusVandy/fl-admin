@@ -11,6 +11,7 @@
     "@types/node": "^16.18.69",
     "@types/react": "^18.2.46",
     "@types/react-dom": "^18.2.18",
+    "@vercel/analytics": "^1.2.2",
     "buffer": "^6.0.3",
     "crypto-js": "^4.2.0",
     "dotenv": "^16.3.1",
