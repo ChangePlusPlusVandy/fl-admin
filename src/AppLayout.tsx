@@ -10,6 +10,7 @@ import AddFamily from "./pages/AddFamily";
 import FriendPage from "./pages/FriendPage";
 import RegisterNew from "./pages/RegisterNew";
 import FamilyPage from "./pages/FamilyPage";
+import ApproveUser from "./pages/ApproveUser"
 
 const AppLayout = () => {
   return (
@@ -58,6 +59,13 @@ const AppLayout = () => {
           element={
             <AuthRoute>
               <FamilyPage />
+            </AuthRoute>
+          }></Route>
+          <Route
+          path="/approve-user"
+          element={
+            <AuthRoute>
+              <ApproveUser />
             </AuthRoute>
           }></Route>
         <Route path="*" element={<Outlet />} />
