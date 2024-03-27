@@ -47,9 +47,64 @@
   background-position: left center;
   padding-left: 50px;
 }
-.selected-register-button {
+.selected-register-button:hover {
   cursor: pointer;
 }
+
+.selected-user-button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: black;
+  background-image: url("../../assets/selected-manage-user.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
+}
+.selected-user-button:hover {
+  cursor: pointer;
+}
+
+.selected-approve-button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: black;
+  background-image: url("../../assets/approve-icon-selected.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
+}
+.selected-approve-button:hover {
+  cursor: pointer;
+}
+
+.selected-export-button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: black;
+  background-image: url("../../assets/export-icon-selected.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
+}
+.selected-export-button:hover {
+  cursor: pointer;
+}
+
 .unselected-friends-button {
   width: 100%;
   border: none;
@@ -69,6 +124,25 @@
   cursor: pointer;
 }
 
+.unselected-user-button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: gray;
+  background-image: url("../../assets/unselected-manage-user.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
+}
+.unselected-user-button:hover {
+  color: black;
+  cursor: pointer;
+}
+
 .unselected-register-button {
   width: 100%;
   border: none;
@@ -84,6 +158,44 @@
   padding-left: 50px;
 }
 .unselected-register-button:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.unselected-approve-button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: gray;
+  background-image: url("../../assets/approve-icon-unselected.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
+}
+.unselected-approve-button:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.unselected-export-button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: gray;
+  background-image: url("../../assets/export-icon-unselected.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
+}
+.unselected-export-button:hover {
   color: black;
   cursor: pointer;
 }
