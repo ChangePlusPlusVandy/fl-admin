@@ -209,8 +209,6 @@ const UserApprove: React.FC<IUserProps> = (props) => {
           body: JSON.stringify({ approved: appr }),
         });
 
-        console.log(res.ok);
-
         window.location.reload();
       }
     } catch (error) {
