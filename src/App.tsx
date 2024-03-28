@@ -22,7 +22,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Analytics />
+        {/* <Analytics /> */}
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<AppLayout />} />
       </Routes>
