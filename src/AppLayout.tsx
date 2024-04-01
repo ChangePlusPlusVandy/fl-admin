@@ -11,6 +11,7 @@ import FriendPage from "./pages/FriendPage";
 import RegisterNew from "./pages/RegisterNew";
 import FamilyPage from "./pages/FamilyPage";
 import ApproveUser from "./pages/ApproveUser";
+import ExportData from "./pages/ExportData";
 
 const AppLayout = () => {
   return (
@@ -72,6 +73,14 @@ const AppLayout = () => {
           element={
             <AuthRoute>
               <ApproveUser />
+            </AuthRoute>
+          }
+        ></Route>
+        <Route
+          path="/export-data"
+          element={
+            <AuthRoute>
+              <ExportData />
             </AuthRoute>
           }
         ></Route>

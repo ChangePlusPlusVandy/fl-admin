@@ -1,0 +1,56 @@
+.export-data-container {
+  font-family: "Poppins", sans-serif;
+  width: 50vw;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+}
+
+.export-data-header {
+  color: #333;
+  text-align: center;
+}
+
+.export-data-subheader {
+  margin-top: 5vh;
+  text-align: center;
+}
+
+.export-data-button {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  cursor: pointer;
+  align-items: center;
+  padding: 10px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 15vw;
+  height: 5vh;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1vw;
+}
+
+button:hover {
+  background-color: #ececec;
+}
+
+.export-data-button-container {
+  margin-top: 5vh;
+}
+
+input[type="month"] {
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  border-width: 0;
+  padding: 5px 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1vw;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+}
+
