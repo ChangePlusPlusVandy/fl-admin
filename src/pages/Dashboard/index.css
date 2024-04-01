@@ -6,3 +6,10 @@
   background: #fff;
   text-align: center;
 }
+
+.image-container {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
