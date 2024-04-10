@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 
 import AppLayout from "./AppLayout";
 import "./layout.css";
+import Eula from "./pages/Eula/EULA";
 
 initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -25,6 +26,7 @@ const App = () => {
         {/* <Analytics /> */}
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<AppLayout />} />
+        <Route path="/eula" element={<Eula />} />
       </Routes>
     </BrowserRouter>
   );

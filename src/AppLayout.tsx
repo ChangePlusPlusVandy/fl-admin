@@ -26,64 +26,56 @@ const AppLayout = () => {
             <AuthRoute>
               <Dashboard />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/manage-friends"
           element={
             <AuthRoute>
               <ManageFriend />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/register"
           element={
             <AuthRoute>
               <RegisterNew />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/friend"
           element={
             <AuthRoute>
               <FriendPage />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/manage-family"
           element={
             <AuthRoute>
               <AddFamily />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/user"
           element={
             <AuthRoute>
               <FamilyPage />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/approve-user"
           element={
             <AuthRoute>
               <ApproveUser />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/export-data"
           element={
             <AuthRoute>
               <ExportData />
             </AuthRoute>
-          }
-        ></Route>
+          }></Route>
         <Route path="*" element={<Outlet />} />
       </Routes>
     </div>
