@@ -70,6 +70,10 @@ const Eula = () => {
         ensuring your device meets the minimum requirements of the{" "}
         <span className="app_name">Friends++</span> software.
       </p>
+      <p>
+        There is no tolerance for objectionable content or abusive users. Such
+        users are subject to account deletion and legal action if necessary.
+      </p>
       <p>You are not permitted to:</p>
       <ul>
         <li>
