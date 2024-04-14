@@ -48,3 +48,18 @@
 .edit-chunk {
   margin-top: 15px;
 }
+
+.delete-user {
+  align-items: center;
+  padding: 10px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  border-width: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 10vw;
+  height: 5vh;
+  color: red;
+  margin: 10px 0 10px 0;
+  font-weight: bold;
+}

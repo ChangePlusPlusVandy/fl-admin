@@ -13,6 +13,8 @@ export interface IUser {
   schedule: string[];
   profilePicture: string;
   approved: boolean;
+  reportedPosts: string[];
+  blockedUsers: string[];
 }
 
 export interface IPost {
@@ -24,6 +26,7 @@ export interface IPost {
   image?: string;
   likes: string[]; // Assuming likes are referenced by user IDs
   dateCreated: Date;
+  reportedBy: string[]; // Assuming reports are referenced by user IDs
 }
 
 export interface IMessage {

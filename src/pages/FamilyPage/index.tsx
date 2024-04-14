@@ -13,6 +13,7 @@ const FamilyPage: React.FC = () => {
   const [updateName, setUpdateName] = useState(name);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [userPfp, setUserPfp] = useState(pfp);
+  const [firebaseUId, setFirebaseUId] = useState("");
 
   const [updateData, setUpdateData] = useState({
     name: updateName,
@@ -44,6 +45,7 @@ const FamilyPage: React.FC = () => {
       setUpdateName(userInfo.name);
       setPhoneNumber(userInfo.phoneNumber);
       setUserPfp(userInfo.profilePicture);
+      setFirebaseUId(userInfo.firebaseUserId);
 
       setUpdateData({
         name: userInfo.name,
@@ -79,6 +81,31 @@ const FamilyPage: React.FC = () => {
       window.location.reload();
     } catch (error) {
       console.error("Error saving changes:", error);
+    }
+  };
+
+  const deleteUser = async () => {
+    try {
+      const conf = window.confirm(
+        `Are you sure you want to delete ${name}? This action is permanent and cannot be undone.`
+      );
+      if (!conf) {
+        return;
+      }
+      // need to also delete the firebase user
+
+      await fetch(`${process.env.REACT_APP_API_URL}/user/${userId}`, {
+        method: "DELETE",
+        headers: {
+          "Friends-Life-Signature": generateHmacSignature(
+            JSON.stringify({ userId }),
+            process.env.REACT_APP_API_KEY || ""
+          ),
+        },
+      });
+      window.location.href = "/manage-family";
+    } catch (error) {
+      console.error("Error deleting user:", error);
     }
   };
 
@@ -129,6 +156,11 @@ const FamilyPage: React.FC = () => {
         </div>
       </div>
       <hr className="fam-hr" />
+      <div>
+        <button className="delete-user" onClick={deleteUser}>
+          Delete User
+        </button>
+      </div>
     </div>
   );
 };
